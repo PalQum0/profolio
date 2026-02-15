@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palqum Company Portfolio</title>
+  <meta name="description" content="Palqum Company builds high-performing digital products, brands, and growth systems for modern teams." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+
+    <nav class="nav container reveal" style="--delay: 0.05s;">
+      <a class="logo" href="#top" aria-label="Palqum home">Palqum</a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+      </div>
+      <a class="cta-link" href="#contact">Book a Call</a>
+    </nav>
+
+    <div class="hero-content container reveal" style="--delay: 0.12s;">
+      <p class="eyebrow">Digital Product Studio</p>
+      <h1>Professional digital experiences that move your business forward.</h1>
+      <p class="intro">
+        Palqum partners with ambitious teams to design, build, and scale web products that are fast,
+        elegant, and conversion-focused.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#work">View Case Studies</a>
+        <a class="btn btn-secondary" href="#services">Explore Services</a>
+      </div>
+
+      <div class="stats-grid" aria-label="Key performance highlights">
+        <article class="stat-card reveal" style="--delay: 0.2s;">
+          <h2>75+</h2>
+          <p>Projects delivered</p>
+        </article>
+        <article class="stat-card reveal" style="--delay: 0.26s;">
+          <h2>4.9/5</h2>
+          <p>Average client rating</p>
+        </article>
+        <article class="stat-card reveal" style="--delay: 0.32s;">
+          <h2>31%</h2>
+          <p>Typical conversion uplift</p>
+        </article>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section container reveal" style="--delay: 0.08s;">
+      <p class="section-label">Services</p>
+      <h2>What we do best</h2>
+      <div class="grid cards">
+        <article class="card reveal" style="--delay: 0.1s;">
+          <h3>Brand & Product Design</h3>
+          <p>Design systems, UX flows, and visual direction crafted to build trust and clarity.</p>
+        </article>
+        <article class="card reveal" style="--delay: 0.16s;">
+          <h3>Web & App Engineering</h3>
+          <p>Modern, scalable builds with clean code, performance budgets, and robust QA workflows.</p>
+        </article>
+        <article class="card reveal" style="--delay: 0.22s;">
+          <h3>Growth & Optimization</h3>
+          <p>Analytics-led improvements, CRO experiments, and campaign execution tied to outcomes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="section section-muted">
+      <div class="container reveal" style="--delay: 0.08s;">
+        <p class="section-label">Selected work</p>
+        <h2>Results from recent engagements</h2>
+        <div class="grid projects">
+          <article class="project reveal" style="--delay: 0.1s;">
+            <p class="tag">Fintech</p>
+            <h3>NovaPay Dashboard</h3>
+            <p>Introduced a modular dashboard that reduced monthly reporting effort by 60%.</p>
+          </article>
+          <article class="project reveal" style="--delay: 0.16s;">
+            <p class="tag">Healthcare</p>
+            <h3>CareBridge Portal</h3>
+            <p>Rebuilt onboarding and reminders, improving appointment retention by 34%.</p>
+          </article>
+          <article class="project reveal" style="--delay: 0.22s;">
+            <p class="tag">Retail</p>
+            <h3>UrbanCart Commerce</h3>
+            <p>Optimized checkout architecture and UX, increasing completion rate by 28%.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section container reveal" style="--delay: 0.08s;">
+      <p class="section-label">Process</p>
+      <h2>A reliable delivery model</h2>
+      <ol class="process-list">
+        <li><strong>Discover:</strong> Align goals, users, and success metrics.</li>
+        <li><strong>Design:</strong> Prototype and validate high-impact journeys.</li>
+        <li><strong>Build:</strong> Develop in agile sprints with full transparency.</li>
+        <li><strong>Scale:</strong> Improve continuously through analytics and experiments.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer reveal" style="--delay: 0.08s;">
+    <div class="container footer-content">
+      <h2>Let’s build your next growth milestone.</h2>
+      <p>Email us at <a href="mailto:hello@palqum.com">hello@palqum.com</a></p>
+      <p class="copyright">© <span id="year"></span> Palqum Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+
+      revealElements.forEach((el) => observer.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
