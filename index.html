@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palqum Company Profolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <nav class="nav container reveal" style="--delay: 0.05s;">
+      <div class="logo">Palqum</div>
+      <a class="cta-link" href="#contact">Let's Talk</a>
+    </nav>
+
+    <div class="hero-content container reveal" style="--delay: 0.12s;">
+      <p class="eyebrow">Innovative Digital Partner</p>
+      <h1>Palqum Company Profolio</h1>
+      <p class="intro">
+        We help bold teams launch smarter digital products through creative strategy,
+        modern development, and measurable growth campaigns.
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#work">View Work</a>
+        <a class="btn btn-secondary" href="#services">Our Services</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section container reveal" style="--delay: 0.08s;">
+      <h2>What We Do</h2>
+      <div class="grid cards">
+        <article class="card reveal" style="--delay: 0.1s;">
+          <h3>Brand & Design</h3>
+          <p>Distinct visual identities and intuitive experiences that make businesses unforgettable.</p>
+        </article>
+        <article class="card reveal" style="--delay: 0.16s;">
+          <h3>Web & App Development</h3>
+          <p>Fast, reliable products built with scalable architecture and clean user journeys.</p>
+        </article>
+        <article class="card reveal" style="--delay: 0.22s;">
+          <h3>Growth Marketing</h3>
+          <p>Data-driven campaigns that attract qualified leads and convert attention into revenue.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="section section-muted">
+      <div class="container reveal" style="--delay: 0.08s;">
+        <h2>Featured Projects</h2>
+        <div class="grid projects">
+          <article class="project reveal" style="--delay: 0.1s;">
+            <p class="tag">Fintech</p>
+            <h3>NovaPay Dashboard</h3>
+            <p>Designed and shipped a multi-tenant dashboard that cut reporting time by 60%.</p>
+          </article>
+          <article class="project reveal" style="--delay: 0.16s;">
+            <p class="tag">Healthcare</p>
+            <h3>CareBridge Platform</h3>
+            <p>Built a patient engagement platform that boosted appointment retention by 34%.</p>
+          </article>
+          <article class="project reveal" style="--delay: 0.22s;">
+            <p class="tag">Retail</p>
+            <h3>UrbanCart Commerce</h3>
+            <p>Reimagined an eCommerce flow that increased checkout completion by 28%.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" style="--delay: 0.08s;">
+      <h2>Why Teams Choose Palqum</h2>
+      <ul class="highlights">
+        <li>Senior experts across strategy, design, and engineering</li>
+        <li>Transparent collaboration with weekly milestone reporting</li>
+        <li>Outcome-first execution focused on growth and ROI</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer reveal" style="--delay: 0.08s;">
+    <div class="container footer-content">
+      <h2>Start Your Next Project</h2>
+      <p>Email us at <a href="mailto:hello@palqum.com">hello@palqum.com</a></p>
+      <p class="copyright">© <span id="year"></span> Palqum Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    revealElements.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
